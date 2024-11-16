@@ -9,6 +9,7 @@ ADMIN_PASS = 'password'
 
 def authenticate():
     print("Welcome to the E-commerce Store Management System")
+    print("Created By Devesh Dixit ")
     username = input("Enter admin username: ")
     password = input("Enter admin password: ")
     
