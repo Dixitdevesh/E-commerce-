@@ -4,8 +4,8 @@ PRODUCTS_FILE = 'products.csv'
 CUSTOMERS_FILE = 'customers.csv'
 ORDERS_FILE = 'orders.csv'
 REVIEWS_FILE = 'reviews.csv'
-ADMIN_USER = 'admin'
-ADMIN_PASS = 'password'
+ADMIN_USER = 'Devesh'
+ADMIN_PASS = 'Dixit'
 
 def authenticate():
     print("Welcome to the E-commerce Store Management System")
