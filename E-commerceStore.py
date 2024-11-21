@@ -101,13 +101,18 @@ def add_customer():
 
 def view_customers():
     try:
-        with open(CUSTOMERS_FILE, mode='r') as file:
-            reader = csv.reader(file)
-            print("\n{:<10} {:<30} {:<15}".format('ID', 'Name', 'Contact'))
-            print("=" * 60)
-            for row in reader:
-                print("{:<10} {:<30} {:<15}".format(row[0], row[1], row[2]))
-            print("=" * 60)
+       with open(CUSTOMERS_FILE, mode='r') as file:
+          reader = csv.reader(file)
+          rows = list(reader)
+        
+          if rows:
+             print("\n{:<10} {:<30} {:<15}".format('ID', 'Name', 'Contact'))
+             print("=" * 60)
+             for row in rows:
+                 print("{:<10} {:<30} {:<15}".format(row[0], row[1], row[2]))
+             print("=" * 60)
+          else:
+             print("There are no customers in 
     except FileNotFoundError:
         print("Customers file not found.")
 
