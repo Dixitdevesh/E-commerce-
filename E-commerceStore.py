@@ -4,12 +4,12 @@ PRODUCTS_FILE = 'products.csv'
 CUSTOMERS_FILE = 'customers.csv'
 ORDERS_FILE = 'orders.csv'
 REVIEWS_FILE = 'reviews.csv'
-ADMIN_USER = 'Devesh'
-ADMIN_PASS = 'Dixit'
+ADMIN_USER = 'nidhi'
+ADMIN_PASS = 'agr'
 
 def authenticate():
     print("Welcome to the E-commerce Store Management System")
-    print("Created By Devesh Dixit ")
+    print("Nidhi Aggarwal ")
     username = input("Enter admin username: ")
     password = input("Enter admin password: ")
     
@@ -112,7 +112,7 @@ def view_customers():
                  print("{:<10} {:<30} {:<15}".format(row[0], row[1], row[2]))
              print("=" * 60)
           else:
-             print("There are no customers in 
+             print("There are no customers in the File ")
     except FileNotFoundError:
         print("Customers file not found.")
 
@@ -307,24 +307,35 @@ def main():
     authenticate()
     
     while True:
-        print("\nE-commerce Store Management System")
-        print("1. Add Product")
-        print("2. View Products")
-        print("3. Update Product")
-        print("4. Delete Product")
-        print("5. Add Customer")
-        print("6. View Customers")
-        print("7. Update Customer")
-        print("8. Delete Customer")
-        print("9. Place Order")
-        print("10. View Orders")
-        print("11. Update Order")
-        print("12. Delete Order")
-        print("13. Add Review")
-        print("14. View Reviews")
-        print("15. Update Review")
-        print("16. Delete Review")
-        print("17. Exit")
+        print("*" * 70)
+        print(" " * 12 + "🌟 E-Commerce Shop Management System 🌟")
+        print(" " * 16 + "📘 Represented in Kanha Makhan Public School 📘")
+        print(" " * 8 + "👩‍💻 Created by: Nidhi Aggarwal (Roll No: ___)")
+        print(" " * 8 + "🤝 Assisted by: Rishav Kumar (Roll No: ___)")
+        print("*" * 70)
+        print("📜 Main Menu 📜")
+        print("-" * 70)
+        print("  1️⃣  Add Product")
+        print("  2️⃣  View Products")
+        print("  3️⃣  Update Product")
+        print("  4️⃣  Delete Product")
+        print("  5️⃣  Add Customer")
+        print("  6️⃣  View Customers")
+        print("  7️⃣  Update Customer")
+        print("  8️⃣  Delete Customer")
+        print("  9️⃣  Place Order")
+        print("  🔟  View Orders")
+        print("  1️⃣1️⃣  Update Order")
+        print("  1️⃣2️⃣  Delete Order")
+        print("  1️⃣3️⃣  Add Review")
+        print("  1️⃣4️⃣  View Reviews")
+        print("  1️⃣5️⃣  Update Review")
+        print("  1️⃣6️⃣  Delete Review")
+        print("  1️⃣7️⃣  Exit")
+        print("-" * 70)
+        print("✨ Thank you for using our system! ✨")
+        print("*" * 70)
+
 
         choice = input("Choose an option: ")
 
