@@ -5,11 +5,10 @@ CUSTOMERS_FILE = 'customers.csv'
 ORDERS_FILE = 'orders.csv'
 REVIEWS_FILE = 'reviews.csv'
 ADMIN_USER = 'nidhi'
-ADMIN_PASS = 'agr'
+ADMIN_PASS = 'prince'
 
 def authenticate():
     print("Welcome to the E-commerce Store Management System")
-    print("Nidhi Aggarwal ")
     username = input("Enter admin username: ")
     password = input("Enter admin password: ")
     
@@ -168,11 +167,29 @@ def place_order():
     product_id = input("Enter Product ID: ")
     quantity = int(input("Enter Quantity: "))
 
-    with open(ORDERS_FILE, mode='a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([order_id, customer_id, product_id, quantity])
-    print(f"Order {order_id} placed successfully.")
+    products=[]
+    try:
+        with open(PRODUCTS_FILE, mode='r') as file:
+            reader = csv.reader(file)
+            products = list(reader)
 
+        for row in products:
+            if row[0] == product_id:
+                row[1] =  row[1]
+                row[2] =  row[2]
+                row[3] = str(int(row[3])-quantity)
+                updated = True
+
+        with open(PRODUCTS_FILE, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerows(products)
+        with open(ORDERS_FILE, mode='a', newline='') as file:
+           writer = csv.writer(file)
+           writer.writerow([order_id, customer_id, product_id, quantity])
+           print(f"Order {order_id} placed successfully.")
+
+    except Exception as e :
+            print("try again")
 def view_orders():
     try:
         with open(ORDERS_FILE, mode='r') as file:
@@ -310,8 +327,8 @@ def main():
         print("*" * 70)
         print(" " * 12 + "🌟 E-Commerce Shop Management System 🌟")
         print(" " * 16 + "📘 Represented in Kanha Makhan Public School 📘")
-        print(" " * 8 + "👩‍💻 Created by: Nidhi Aggarwal (Roll No: ___)")
-        print(" " * 8 + "🤝 Assisted by: Rishav Kumar (Roll No: ___)")
+        print(" " * 8 + "👩‍💻 Created by: Nidhi Agrawal (Roll No: ___)")
+        print(" " * 8 + "🤝 Assisted by: prince Kumar (Roll No: ___)")
         print("*" * 70)
         print("📜 Main Menu 📜")
         print("-" * 70)
